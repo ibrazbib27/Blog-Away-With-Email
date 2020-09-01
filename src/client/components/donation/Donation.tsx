@@ -165,6 +165,7 @@ const Donation: React.FC<DonationPaymentProps & DonationRouteProps> = (
                     id={"donation_form"}
                     className={"m-0 w-100"}
                 >
+
                     <Row className={"w-100 mx-0 mb-1"}>
                         <Col xs={12} className={"text-wrap w-100"}>
                             <Form.Text className={"font-italic small text-dark m-0"}>
@@ -172,9 +173,10 @@ const Donation: React.FC<DonationPaymentProps & DonationRouteProps> = (
                             </Form.Text>
                         </Col>
                     </Row>
-
-                    <Row className={"w-100 justify-content-around mx-0 my-5"}>
-                        <Form.Group className={"my-2  col-md-5 col-sm-6 col-12"}>
+                    <Row className={"justify-content-center"}>
+                        <Col xs={12} md={10}>
+                    <Row className={"justify-content-between mx-0 my-5"}>
+                        <Form.Group className={"my-2  col-xl-4 col-lg-5 col-md-5 col-sm-5 col-12"}>
                             <Form.Label className={"required"}>
                                 <b>Name</b>
                                 <OverlayTrigger
@@ -212,7 +214,7 @@ const Donation: React.FC<DonationPaymentProps & DonationRouteProps> = (
                                 Enter your name
                             </Form.Control.Feedback>
                         </Form.Group>
-                        <Form.Group className={"my-2 col-md-4 col-sm-5 col-12 "}>
+                        <Form.Group className={"my-2 col-xl-3 col-lg-4 col-md-5 col-sm-5 col-12 "}>
                             <Form.Label className={"required"}>
                                 <b>Amount</b>
                                 <OverlayTrigger
@@ -276,8 +278,9 @@ const Donation: React.FC<DonationPaymentProps & DonationRouteProps> = (
                             </InputGroup>
                         </Form.Group>
                     </Row>
-
-                    <Row className={"w-100 justify-content-center mx-0 my-5"}>
+                        </Col>
+                    </Row>
+                    <Row className={"w-100 justify-content-center mx-0 mb-5 mt-3"}>
                         <Form.Group className={"my-2 col-12 col-md-10"}>
                             <Form.Label className={"required"}>
                                 <b>Card Details</b>

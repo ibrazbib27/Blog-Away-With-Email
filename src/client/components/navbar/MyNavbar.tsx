@@ -1,5 +1,5 @@
 import * as React from "react";
-import {useLayoutEffect, useState} from "react";
+import {useEffect, useState} from "react";
 import * as $ from "jquery";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
@@ -12,17 +12,17 @@ const MyNavbar: React.FC<NavbarProps> = (props) => {
   const MAX_WIDTH: number = 991.98;
   const [size, setSize] = useState<boolean | undefined>();
 
-  useLayoutEffect(() => {
-    if (window.innerWidth >= MAX_WIDTH) setSize(true);
-    else setSize(false);
-  }, []);
-
-  $(document).ready(function () {
-    $(window).resize(function () {
-      if ($(this).width() >= MAX_WIDTH) setSize(true);
+    let screenSize = () => {
+      if (window.innerWidth >= MAX_WIDTH) setSize(true);
       else setSize(false);
-    });
-  });
+    }
+
+    useEffect(() => {
+      screenSize();
+    }, []);
+
+    window.addEventListener("resize", screenSize);
+
 
   return (
     <>
